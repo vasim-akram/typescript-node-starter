@@ -17,6 +17,38 @@ export default class UserRoutes implements IRoute {
                         auth: false,
                     },
                 },
+                {
+                    method: 'GET',
+                    path: '/api/user/{id}',
+                    config: {
+                        handler: controller.getById,
+                        auth: false,
+                    },
+                },
+                {
+                    method: 'GET',
+                    path: '/api/users',
+                    config: {
+                        handler: controller.getAll,
+                        auth: false,
+                    },
+                },
+                {
+                    method: 'PUT',
+                    path: '/api/user/{id}',
+                    config: {
+                        handler: controller.updateById,
+                        auth: false,
+                    },
+                },
+                {
+                    method: 'DELETE',
+                    path: '/api/user/{id}',
+                    config: {
+                        handler: controller.deleteById,
+                        auth: false,
+                    },
+                },
             ]);
 
             console.info('UserRoutes - Finish adding user routes.');
