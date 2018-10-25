@@ -24,68 +24,68 @@ export default class CrudController<T> {
     };
 
     public getById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
-        try{
+        try {
             console.info(`GET - ${Utils.getUrl(request)}`);
 
-            const id = encodeURIComponent(request.params.id)
+            const id = encodeURIComponent(request.params.id);
 
             const entity: T = await this.crudResolver.getById(id);
 
             return response({
                 statusCode: 200,
-                data: entity
+                data: entity,
             });
-        }catch(error) {
-            return response(Boom.badImplementation(error))
+        } catch (error) {
+            return response(Boom.badImplementation(error));
         }
-    }
+    };
 
     public getAll = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
-        try{
+        try {
             console.info(`GET - ${Utils.getUrl(request)}`);
 
-            const entities: T[] = await this.crudResolver.getAll()
+            const entities: T[] = await this.crudResolver.getAll();
 
             return response({
                 statusCode: 200,
-                data: entities
+                data: entities,
             });
-        }catch(error) {
-            return response(Boom.badImplementation(error))
+        } catch (error) {
+            return response(Boom.badImplementation(error));
         }
-    }
+    };
 
     public updateById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
-        try{
+        try {
             console.info(`PUT - ${Utils.getUrl(request)}`);
 
-            const id = encodeURIComponent(request.params.id)
+            const id = encodeURIComponent(request.params.id);
 
             const entity: T = await this.crudResolver.updateById(id, request.payload);
 
             return response({
                 statusCode: 200,
-                data: entity
+                data: entity,
             });
-        }catch(error) {
-            return response(Boom.badImplementation(error))
+        } catch (error) {
+            return response(Boom.badImplementation(error));
         }
-    }
+    };
 
     public deleteById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
-        try{
+        try {
             console.info(`DELETE - ${Utils.getUrl(request)}`);
 
-            const id = encodeURIComponent(request.params.id)
+            const id = encodeURIComponent(request.params.id);
 
-            await this.crudResolver.deleteById(id)
+            await this.crudResolver.deleteById(id);
 
             return response({
                 statusCode: 200,
-                data: { id }
+                data: { id },
             });
-        }catch(error) {
-            return response(Boom.badImplementation(error))
+        } catch (error) {
+            return response(Boom.badImplementation(error));
         }
-    }
+    };
 }

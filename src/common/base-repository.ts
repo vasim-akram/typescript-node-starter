@@ -41,7 +41,7 @@ export default class Repository<T> {
 
     public updateById(_id: string, data: T): Promise<T> {
         return new Promise((resolve, reject) => {
-            this.dataStore.update({ _id }, data, {multi: true}, error => {
+            this.dataStore.update({ _id }, data, { multi: true }, error => {
                 if (error) {
                     reject(error);
                 }
@@ -52,7 +52,6 @@ export default class Repository<T> {
 
     public deleteById(_id: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            
             this.dataStore.remove({ _id }, error => {
                 if (error) {
                     reject(error);
