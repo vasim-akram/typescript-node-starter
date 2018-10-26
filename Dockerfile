@@ -1,6 +1,6 @@
 FROM node:8.11.4-alpine
 
-MAINTAINER iamvasim786@gmail.com
+MAINTAINER Vasim Akram
 
 WORKDIR /usr/app
 
