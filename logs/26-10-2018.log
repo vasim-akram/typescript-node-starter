@@ -1,0 +1,18 @@
+{"level":"info","message":"Server - Up and running!","timestamp":"2018-10-26T06:30:51.810Z"}
+{"level":"info","message":"Plugins - Registering status-monitor","timestamp":"2018-10-26T06:37:09.442Z"}
+{"level":"info","message":"Plugins - Registering hapi-boom-decorators","timestamp":"2018-10-26T06:37:09.490Z"}
+{"level":"info","message":"Router - Start adding routes.","timestamp":"2018-10-26T06:37:09.495Z"}
+{"level":"info","message":"UserRoutes - Start adding user routes.","timestamp":"2018-10-26T06:37:09.495Z"}
+{"level":"info","message":"UserRoutes - Finish adding user routes.","timestamp":"2018-10-26T06:37:09.503Z"}
+{"level":"info","message":"Router - Finish adding routes.","timestamp":"2018-10-26T06:37:09.503Z"}
+{"level":"info","message":"Server - Up and running!","timestamp":"2018-10-26T06:37:09.574Z"}
+{"level":"info","message":"Plugins - Registering status-monitor","timestamp":"2018-10-26T06:37:48.041Z"}
+{"level":"info","message":"Plugins - Registering hapi-boom-decorators","timestamp":"2018-10-26T06:37:48.098Z"}
+{"level":"info","message":"Router - Start adding routes.","timestamp":"2018-10-26T06:37:48.104Z"}
+{"level":"info","message":"UserRoutes - Start adding user routes.","timestamp":"2018-10-26T06:37:48.104Z"}
+{"level":"info","message":"UserRoutes - Finish adding user routes.","timestamp":"2018-10-26T06:37:48.112Z"}
+{"level":"info","message":"Router - Finish adding routes.","timestamp":"2018-10-26T06:37:48.112Z"}
+{"level":"info","message":"MongoDB - Connecting...","timestamp":"2018-10-26T06:37:48.130Z"}
+{"level":"info","message":"MongoDB - Connected to mongodb.","timestamp":"2018-10-26T06:37:48.179Z"}
+{"level":"info","message":"Server - Up and running!","timestamp":"2018-10-26T06:37:48.180Z"}
+{"level":"info","message":"GET - http://localhost:8080/api/users","timestamp":"2018-10-26T06:38:20.775Z"}

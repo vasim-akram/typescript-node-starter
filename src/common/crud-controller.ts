@@ -1,5 +1,6 @@
 import * as Hapi from 'hapi';
 import * as Boom from 'boom';
+import Logger from '../helper/logger';
 import Utils from '../helper/utils';
 import CrudResolver from './base-resolver';
 
@@ -8,7 +9,7 @@ export default class CrudController<T> {
 
     public create = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
         try {
-            console.info(`POST - ${Utils.getUrl(request)}`);
+            Logger.info(`POST - ${Utils.getUrl(request)}`);
 
             const data: any = await this.crudResolver.save(request.payload);
 
@@ -25,7 +26,7 @@ export default class CrudController<T> {
 
     public getById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
         try {
-            console.info(`GET - ${Utils.getUrl(request)}`);
+            Logger.info(`GET - ${Utils.getUrl(request)}`);
 
             const id = encodeURIComponent(request.params.id);
 
@@ -42,7 +43,7 @@ export default class CrudController<T> {
 
     public getAll = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
         try {
-            console.info(`GET - ${Utils.getUrl(request)}`);
+            Logger.info(`GET - ${Utils.getUrl(request)}`);
 
             const entities: T[] = await this.crudResolver.getAll();
 
@@ -57,7 +58,7 @@ export default class CrudController<T> {
 
     public updateById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
         try {
-            console.info(`PUT - ${Utils.getUrl(request)}`);
+            Logger.info(`PUT - ${Utils.getUrl(request)}`);
 
             const id = encodeURIComponent(request.params.id);
 
@@ -74,7 +75,7 @@ export default class CrudController<T> {
 
     public deleteById = async (request: Hapi.Request, response: Hapi.ReplyNoContinue): Promise<any> => {
         try {
-            console.info(`DELETE - ${Utils.getUrl(request)}`);
+            Logger.info(`DELETE - ${Utils.getUrl(request)}`);
 
             const id = encodeURIComponent(request.params.id);
 

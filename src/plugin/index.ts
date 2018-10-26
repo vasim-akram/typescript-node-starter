@@ -1,27 +1,28 @@
 import * as Hapi from 'hapi';
+import Logger from '../helper/logger';
 import Config from '../config';
 
 export default class Plugins {
     public static async status(server: Hapi.Server): Promise<Error | any> {
         try {
-            console.info('Plugins - Registering status-monitor');
+            Logger.info('Plugins - Registering status-monitor');
 
             await Plugins.register(server, {
                 register: require('hapijs-status-monitor'),
             });
         } catch (error) {
-            console.error(`Plugins - Oops, something went wrong when registering status plugin: ${error}`);
+            Logger.info(`Plugins - Oops, something went wrong when registering status plugin: ${error}`);
         }
     }
     public static async boom(server: Hapi.Server): Promise<Error | any> {
         try {
-            console.info('Plugins - Registering hapi-boom-decorators');
+            Logger.info('Plugins - Registering hapi-boom-decorators');
 
             await Plugins.register(server, {
                 register: require('hapi-boom-decorators'),
             });
         } catch (error) {
-            console.error(`Plugins - Oops, something went wrong when registering boom plugin: ${error}`);
+            Logger.info(`Plugins - Oops, something went wrong when registering boom plugin: ${error}`);
         }
     }
     public static async registerAll(server: Hapi.Server): Promise<Error | any> {

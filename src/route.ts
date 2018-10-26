@@ -1,12 +1,13 @@
 import * as Hapi from 'hapi';
+import Logger from './helper/logger';
 import UserRoutes from './api/users/routes';
 
 export default class Router {
     public static async loadRoutes(server: Hapi.Server): Promise<any> {
-        console.info('Router - Start adding routes.');
+        Logger.info('Router - Start adding routes.');
 
         await new UserRoutes().register(server);
 
-        console.info('Router - Finish adding routes.');
+        Logger.info('Router - Finish adding routes.');
     }
 }

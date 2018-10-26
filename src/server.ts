@@ -1,8 +1,9 @@
 import * as Hapi from 'hapi';
 import * as DotEnv from 'dotenv';
+import Logger from './helper/logger';
 import Plugin from './plugin';
 import Router from './route';
-
+import DbClient from './common/db-client';
 export default class Server {
     private static _instance: Hapi.Server;
 
@@ -19,18 +20,19 @@ export default class Server {
             await Plugin.registerAll(Server._instance);
             await Router.loadRoutes(Server._instance);
             await Server._instance.start();
+            await DbClient.connect();
 
-            console.info('Server - Up and running!');
+            Logger.info('Server - Up and running!');
 
             return Server._instance;
         } catch (error) {
-            console.error(`Server - There was something worng: ${error}`);
+            Logger.info(`Server - There was something worng: ${error}`);
 
             throw error;
         }
     }
     public static stop(): Promise<Error | any> {
-        console.log('Server - Stopping!');
+        Logger.info('Server - Stopping!');
 
         return Server._instance.stop();
     }
